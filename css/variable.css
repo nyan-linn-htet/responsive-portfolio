@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --font-family: 'Poppins', sans-serif;
+
+    /* .125rem = 2px, .25rem = 4px, .5rem = 8px, .75rem = 12px, 1rem = 16px, 2rem = 32px */
+
+    --title-fs-xl: 40px;
+    --title-fs-lg: 36px;
+    --title-fs-md: 30px;
+    --title-fs-sm: 26px;
+    --body-fs-lg: 22px;
+    --body-fs-md: 18px;
+    --body-fs-sm: 14px;
+
+    --btn-fs: 16px;
+
+    --icon-sm: 14px;
+    --icon-md: 24px;
+    --icon-lg: 30px;
+    --icon-xl: 40px;
+
+    --brand-color: #ff4522;
+    --brand-color-op: rgba(255, 69, 34, 0.7);
+    --title-color: #000;
+    --body-text-color: #5C5C5C;
+    --body-bg-color: #fff;
+    --text-color1: #3c3c3c;
+    --text-color2: #4c4c4c;
+}
+
+@media(max-width: 768px) {
+    :root {
+        --title-fs-xl: 36px;
+        --title-fs-lg: 32px;
+        --title-fs-md: 26px;
+        --title-fs-sm: 22px;
+        --body-fs-lg: 18px;
+        --body-fs-md: 14px;
+        --body-fs-sm: 12px;
+
+        --btn-fs: 12px;
+
+        --icon-sm: 10px;
+        --icon-md: 20px;
+        --icon-lg: 26px;
+        --icon-xl: 36px;
+    }
+}
+
+/* ::-webkit-scrollbar {
+    background: var(--brand-color-op);
+    width: 12px;
+    border: 6px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--brand-color);
+    border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+
+} */
