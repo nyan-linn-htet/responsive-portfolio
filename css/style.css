@@ -376,6 +376,9 @@ nav ul li a .sm-ic {
 #service-1 {
     box-shadow: 0 0 10px 3px var(--brand-color);
 }
+.service:hover {
+    box-shadow: 0 0 10px 3px var(--brand-color);
+}
 .service .text h1 {
     color: var(--title-color);
     font-size: var(--title-fs-md);
@@ -438,6 +441,9 @@ nav ul li a .sm-ic {
 .portfolio .works #work-1 {
     box-shadow: 0 0 10px 3px var(--brand-color-op);
 }
+.portfolio .work:hover {
+    box-shadow: 0 0 10px 3px var(--brand-color-op);
+}
 .portfolio .work .img {
     width: 260px;
     height: 150px;
@@ -476,7 +482,8 @@ nav ul li a .sm-ic {
 
 .contact .two {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: max-content 1fr;
+    column-gap: 100px;
 }
 .contact .talk {
     display: flex;
@@ -489,6 +496,9 @@ nav ul li a .sm-ic {
     border: 1px solid var(--brand-color-op);
     border-radius: 10px;
     margin-top: 30px;
+}
+.contact .talk .box:hover {
+    box-shadow: 0 0 10px 3px var(--brand-color-op);
 }
 .contact .talk #contact-1 {
     box-shadow: 0 0 10px 3px var(--brand-color-op);
@@ -622,6 +632,12 @@ nav ul li a .sm-ic {
         width: 210px;
         height: 100px;
         margin: 20px;
+    }
+
+    /* Contactme */
+
+    .contact .two {
+        column-gap: 50px;
     }
 
 }

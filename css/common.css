@@ -80,10 +80,3 @@
     background: var(--brand-color);
     border-radius: 5px 0 0 5px;
 }
-.skills-open {
-    display: block;
-}
-.skills-close {
-    height: 0;
-    overflow: hidden;
-}
