@@ -72,7 +72,6 @@ nav ul li a .sm-ic {
 .slider-content {
     display: grid;
     grid-template-columns: max-content 1fr 1fr;
-    gap: 50px;
     justify-items: center;
 }
 
@@ -820,6 +819,7 @@ nav ul li a .sm-ic {
 
     .slider-content {
         grid-template-columns: max-content 1fr;
+        gap: 50px;
     }
     .slider-content .social {
         grid-column: 1/2;
