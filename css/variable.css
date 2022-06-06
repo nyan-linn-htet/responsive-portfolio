@@ -27,6 +27,33 @@
     --body-bg-color: #fff;
     --text-color1: #3c3c3c;
     --text-color2: #4c4c4c;
+    --btn-color: #fff;
+    --footer-bg: #ff4522;
+    --footer-color: #fff;
+    --input-color: #333;
+    --service-model-bg: rgba(0, 0, 0, 0.8);
+    --service-content-bg: #fff;
+    --mb-nav-color: #333;
+
+    --z-modal: 1000;
+    --z-nav: 100;
+    --z-photo: 10;
+}
+.dark-mode {
+    --brand-color: #ff4522;
+    --brand-color-op: rgba(255, 69, 34, 0.7);
+    --title-color: #fff;
+    --body-text-color: #fff;
+    --body-bg-color: #000;
+    --text-color1: #fff;
+    --text-color2: #fff;
+    --btn-color: #fff;
+    --footer-bg: #111111;
+    --footer-color: #ff4522;
+    --input-color: #fff;
+    --service-model-bg: rgba(0, 0, 0, 0.8);
+    --service-content-bg: #111;
+    --mb-nav-color: #fff;
 }
 
 @media(max-width: 768px) {

@@ -21,6 +21,9 @@ a {
     text-decoration: none;
 }
 
+/* DarkMode */
+
+
 /* Navbar */
 
 nav {
@@ -28,7 +31,7 @@ nav {
     background: var(--body-bg-color);
     width: 100%;
     transition: 0.3s;
-    z-index: 10;
+    z-index: var(--z-nav);
 }
 nav .menu {
     display: grid;
@@ -55,16 +58,34 @@ nav ul li a {
     color: var(--title-color);
     font-size: var(--body-fs-md);
 }
+nav ul li a:hover {
+    color: var(--brand-color);
+}
 nav ul li:first-child a {
     color: var(--brand-color);
 }
-nav ul li a:hover {
-    color: var(--brand-color);
+nav ul li a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: var(--brand-color-op);
+    display: flex;
+    margin: auto;
+    transition: 0.5s;
+}
+nav ul li a:hover::after {
+    width: 100%;
+}
+nav ul li:first-child a::after {
+    width: 100%;
 }
 .toggle, .open {
     display: none;
 }
 nav ul li a .sm-ic {
+    display: none;
+}
+.hide {
     display: none;
 }
 /* Slider */
@@ -133,7 +154,7 @@ nav ul li a .sm-ic {
     width: 250px;
     height: 350px;
     transform: rotate(7deg);
-    z-index: 10;
+    z-index: var(--z-photo);
 }
 .slider-content .profile .photo img {
     width: 100%;
@@ -249,13 +270,18 @@ nav ul li a .sm-ic {
 }
 .skills .ability .skills-text svg {
     color: var(--brand-color);
+    transition: 0.3s;
 }
-.skills .ability .skills-text .down {
-    display: none;
+.rotate {
+    transform: rotate(180deg);
 }
-.skills .ability .language {
+.language {
     margin-top: 50px;
     margin-left: 40px;
+    display: none;
+}
+.frontend .language {
+    display: block;
 }
 .skills .ability .language > div {
     display: flex;
@@ -365,6 +391,7 @@ nav ul li a .sm-ic {
     grid-template-columns: repeat(3, max-content);
     justify-content: center;
     gap: 40px;
+    position: relative;
 }
 .service {
     width: 270px;
@@ -372,9 +399,7 @@ nav ul li a .sm-ic {
     border: 1px solid var(--brand-color-op);
     border-radius: 10px;
     padding: 80px 0 40px 40px;
-}
-#service-1 {
-    box-shadow: 0 0 10px 3px var(--brand-color);
+    transition: 0.4s;
 }
 .service:hover {
     box-shadow: 0 0 10px 3px var(--brand-color);
@@ -389,19 +414,65 @@ nav ul li a .sm-ic {
     color: var(--brand-color);
     transition: 0.3s;
 }
-.service .text a {
+.service .text .service-btn {
     display: flex;
     align-items: center;
     color: var(--brand-color);
 }
-.service .text a:hover svg {
+.service .text .service-btn:hover svg {
     transform: translateX(8px);
 }
-.service .text a span {
+.service .text .service-btn span {
     font-size: var(--body-fs-md);
     font-weight: 500;
 }
 
+.service-model {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--service-model-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: var(--z-modal);
+    transition: 0.3s;
+    opacity: 0;
+    visibility: hidden;
+}
+.service-model-content {
+    position: relative;
+    background: var(--service-content-bg);
+    padding: 30px;
+    border-radius: 10px;
+}
+.service-model-services {
+    display: grid;
+    row-gap: 20px;
+}
+.service-model-service {
+    display: flex;
+}
+.service-model-service svg {
+    margin-right: 5px;
+    color: var(--brand-color-op);
+}
+.service-model-content h2 {
+    margin-bottom: 30px;
+}
+.service-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: var(--brand-color);
+    cursor: pointer;
+}
+.show-model {
+    opacity: 1;
+    visibility: visible;
+}
 /* Portfolio */
 
 .portfolio .menu {
@@ -414,6 +485,7 @@ nav ul li a .sm-ic {
 .portfolio .menu .text {
     border-radius: 5px;
     margin-right: 30px;
+    transition: 0.3s;
 }
 .portfolio .menu .text a {
     display: block;
@@ -421,6 +493,9 @@ nav ul li a .sm-ic {
     color: var(--title-color);
     font-size: var(--body-fs-lg);
     font-weight: 500;
+}
+.portfolio .menu .text:hover {
+    background: var(--brand-color);
 }
 .portfolio .all {
     background: var(--brand-color);
@@ -437,9 +512,6 @@ nav ul li a .sm-ic {
     height: 270px;
     border: 1px solid var(--brand-color-op);
     border-radius: 10px;
-}
-.portfolio .works #work-1 {
-    box-shadow: 0 0 10px 3px var(--brand-color-op);
 }
 .portfolio .work:hover {
     box-shadow: 0 0 10px 3px var(--brand-color-op);
@@ -535,8 +607,9 @@ nav ul li a .sm-ic {
     font-weight: 400;
     border: none;
     outline: none;
+    background: none;
     width: 100%;
-    color: #333;
+    color: var(--input-color);
 }
 .contact .write label {
     position: absolute;
@@ -552,8 +625,8 @@ nav ul li a .sm-ic {
 /* Footer */
 
 .footer {
-    background: var(--brand-color);
-    color: var(--body-bg-color);
+    background: var(--footer-bg);
+    color: var(--footer-color);
 }
 .footer .text {
     padding: 30px 0;
@@ -667,10 +740,10 @@ nav ul li a .sm-ic {
         width: 100%;
         left: 0;
         bottom: -100%;
-        z-index: 100;
+        z-index: var(--z-nav);
         background: var(--body-bg-color);
         border-radius: 20px 20px 0 0;
-        box-shadow: 0 -1px 4px 1px var(--brand-color-op);
+        box-shadow: 0 -1px 4px 2px var(--brand-color-op);
         padding: 60px;
         transition: ease-in-out 0.5s;
     }
@@ -692,7 +765,7 @@ nav ul li a .sm-ic {
         display: flex;
         flex-direction: column;
         align-items: center;
-        color: #333;
+        color: var(--mb-nav-color);
     }
     #close {
         position: absolute;
@@ -700,11 +773,11 @@ nav ul li a .sm-ic {
         right: 80px;
         cursor: pointer;
     }
-    #close:hover, #light:hover, #open:hover {
+    #close:hover, #moon:hover, #open:hover {
         color: var(--brand-color);
     }
 
-    #light {
+    #moon, .light {
         margin-right: 25px;
         cursor: pointer;
     }
@@ -830,9 +903,15 @@ nav ul li a .sm-ic {
         grid-row: 2/3;
         margin-top: -220px;
     }
+    .slider-content .text p {
+        padding-bottom: 50px;
+    }
     .slider-content .profile {
         grid-column: 2/3;
         grid-row: 1/2;
+    }
+    .slider .scroll {
+        display: none;
     }
 
     /* About */

@@ -30,7 +30,7 @@
     padding: 15px;
     border-radius: 10px;
     background: var(--brand-color);
-    color: var(--body-bg-color);
+    color: var(--btn-color);
     font-size: var(--btn-fs);
     font-weight: 400;
     justify-content: center;
